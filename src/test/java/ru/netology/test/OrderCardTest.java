@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 
 public class OrderCardTest {
@@ -12,7 +13,7 @@ public class OrderCardTest {
 
     @BeforeAll
     static void setUpAll() {
-        System.setProperty("webdriver.chrome.driver", "C:\\drivers\\chromedriver.exe");
+        WebDriverManager.chromedriver().setup();
     }
 
     @BeforeEach
