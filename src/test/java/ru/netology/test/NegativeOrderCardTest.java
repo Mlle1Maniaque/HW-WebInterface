@@ -108,4 +108,16 @@ public class NegativeOrderCardTest {
 
         Assertions.assertEquals(expected, actual);
     }
+
+    @Test
+    void shouldOrderWithoutAgreement() {
+        driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Иванова Мария");
+        driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+79370006989");
+        driver.findElement(By.className("button")).click();
+
+        boolean actual = driver.findElement(By.cssSelector("[data-test-id=agreement].input_invalid")).isDisplayed();
+
+        Assertions.assertTrue(actual);
+
+    }
 }
